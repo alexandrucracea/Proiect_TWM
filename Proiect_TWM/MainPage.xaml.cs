@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Proiect_TWM.Configuration;
+using Proiect_TWM.Configuration.ApiHelper;
+using Proiect_TWM.Services.RecipeService;
 
 namespace Proiect_TWM;
 
@@ -13,6 +15,9 @@ public partial class MainPage : ContentPage
 		_environmentConfiguration = new EnvironmentConfiguration(new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).Build());
 		var key = _environmentConfiguration.GetKeys("Keys","Count");
 		InitializeComponent();
+
+//		26.04.2023
+		ApiHelper.InitializeClient();
 	}
 
 	private void OnCounterClicked(object sender, EventArgs e)
@@ -26,5 +31,14 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
+	public async Task LoadRecipes(string recipeName = "pizza")
+	{
+		var recipes = await RecipeProcessor.LoadRecipes(recipeName);
+	}
+
+    private async void ContentPage_Loaded(object sender, EventArgs e)
+    {
+		await LoadRecipes();
+    }
 }
 
