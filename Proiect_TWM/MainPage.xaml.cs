@@ -20,6 +20,7 @@ public partial class MainPage : ContentPage
 		ApiHelper.InitializeClient();
 	}
 
+	//Buna ziua
 	//private void OnCounterClicked(object sender, EventArgs e)
 	//{
 	//	count++;
@@ -35,7 +36,7 @@ public partial class MainPage : ContentPage
 	{
 		var plants = await PlantProcessor.LoadPlants();
 	}
-
+	//comment de test
     private async void ContentPage_Loaded(object sender, EventArgs e)
     {
 		//await LoadPlants();
