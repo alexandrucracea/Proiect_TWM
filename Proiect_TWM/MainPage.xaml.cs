@@ -20,6 +20,7 @@ public partial class MainPage : ContentPage
 		ApiHelper.InitializeClient();
 	}
 
+	//Buna ziua
 	//private void OnCounterClicked(object sender, EventArgs e)
 	//{
 	//	count++;
