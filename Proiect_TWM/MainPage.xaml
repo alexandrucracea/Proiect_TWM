@@ -1,42 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Proiect_TWM.MainPage"
-             Loaded="ContentPage_Loaded">
+             x:Class="LearningHTMLCSS.MainPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="StyleSheet.css" />
+    </ContentPage.Resources>
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
-
+    <StackLayout Padding="20">
+        <Label Text="JavaScript is fun, but so is HTML &amp; CSS!" FontSize="Large"  />
+        <Label Text="You can learn JavaScript without HTML and CSS, but for DOM manipulation is useful to have some useful ideas of HTML and CSS. You can learn more about it on" />
+        <Label Text="Another heading" FontSize="Medium"  />
+        <Label Text="Just another paragraph" />
+        <Image Source="https://img-c.udemycdn.com/course/240x135/437398_46c3_10.jpg" WidthRequest="240" HeightRequest="135" Margin="0,20" />
+        <StackLayout>
+            <Label Text="Your name here" FontSize="Medium"  />
+            <Label Text="Please fill in this form :)" />
+            <Entry Placeholder="Your name" Margin="0,10" />
+            <Button Text="OK!" Margin="0,10" />
+        </StackLayout>
+    </StackLayout>
 </ContentPage>
