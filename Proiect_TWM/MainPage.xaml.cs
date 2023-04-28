@@ -31,14 +31,14 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
-	public async Task LoadRecipes(string recipeName = "pizza")
+	public async Task LoadPlants()
 	{
-		var recipes = await RecipeProcessor.LoadRecipes(recipeName);
+		var plants = await PlantProcessor.LoadPlants();
 	}
 
     private async void ContentPage_Loaded(object sender, EventArgs e)
     {
-		await LoadRecipes();
+		await LoadPlants();
     }
 }
 
