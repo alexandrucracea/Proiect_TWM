@@ -40,7 +40,7 @@ public partial class MainPage : ContentPage
 	//Commit 2 de test
     private async void ContentPage_Loaded(object sender, EventArgs e)
     {
-		//await LoadPlants();
+		await LoadPlants();
 	}
 }
 
