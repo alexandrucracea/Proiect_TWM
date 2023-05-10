@@ -6,6 +6,7 @@ namespace Proiect_TWM.View;
 
 public partial class LoginPage : ContentPage
 {
+    //test
     public LoginPage()
     {
 		InitializeComponent();
