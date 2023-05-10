@@ -10,9 +10,5 @@ public partial class LoginPage : ContentPage
     {
 		InitializeComponent();
 
-		using (var reader = new StringReader("^contentpage{background-color: red; text - align: center;}"))
-		{
-			this.Resources.Add(StyleSheet.FromReader(reader));
-		}
 	}
 }

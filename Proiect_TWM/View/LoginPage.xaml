@@ -5,7 +5,7 @@
              x:Class="Proiect_TWM.View.LoginPage"
              Title="LoginPage">
     <ContentPage.Resources>
-        <StyleSheet Source="LoginPage.css"/>
+        <StyleSheet Source="LoginPage.css" />
     </ContentPage.Resources>
         <VerticalStackLayout Spacing="10" Margin="10">
         <Label 

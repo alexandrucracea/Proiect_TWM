@@ -1,4 +1,7 @@
-﻿^contentpage{
-    background-color: red;
-    text-align: center;
+﻿^contentpage {
+    background-color:red;
+}
+
+button {
+    background-color:green;
 }
