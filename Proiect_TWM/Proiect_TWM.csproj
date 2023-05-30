@@ -50,6 +50,7 @@
 
 	<ItemGroup>
 	  <None Remove="appsettings.json" />
+	  <None Remove="Resources\Images\home_background.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -65,10 +66,12 @@
 
 	<ItemGroup>
 	  <Folder Include="ViewModel\" />
-	  <Folder Include="View\" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\HomePageView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
