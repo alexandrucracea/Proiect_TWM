@@ -51,6 +51,7 @@
 	<ItemGroup>
 	  <None Remove="appsettings.json" />
 	  <None Remove="Resources\Images\home_background.png" />
+	  <None Remove="Resources\Images\home_logo.png" />
 	</ItemGroup>
 
 	<ItemGroup>
