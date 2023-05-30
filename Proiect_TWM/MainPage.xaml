@@ -5,7 +5,7 @@
         <StyleSheet Source="StyleSheet.css" />
     </ContentPage.Resources>
 
-    <StackLayout Padding="20">
+    <!--<StackLayout Padding="20">
         <Label Text="JavaScript is fun, but so is HTML &amp; CSS!" FontSize="Large"  />
         <Label Text="You can learn JavaScript without HTML and CSS, but for DOM manipulation is useful to have some useful ideas of HTML and CSS. You can learn more about it on" />
         <Label Text="Another heading" FontSize="Medium"  />
@@ -17,5 +17,18 @@
             <Entry Placeholder="Your name" Margin="0,10" />
             <Button Text="OK!" Margin="0,10" />
         </StackLayout>
-    </StackLayout>
+    </StackLayout>-->
+
+    <Grid>
+
+        <Image
+            x:Name="background"
+            Source="C:\Users\maria\Desktop\chris\facultate\TWM\Proiect_TWM\Proiect_TWM\Resources\Images\HomePage\backgroung.jpg"
+            Aspect="AspectFill"
+            HorizontalOptions="Start">
+            
+        </Image>
+            
+        
+    </Grid>
 </ContentPage>
