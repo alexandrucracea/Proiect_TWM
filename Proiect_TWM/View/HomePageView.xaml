@@ -2,13 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiect_TWM.View.HomePageView"
-             Shell.NavBarIsVisible="False">
-    <!--<VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>-->
+             Shell.NavBarIsVisible="False"
+             Loaded="ContentPage_Loaded">
+
     <Grid>
         
         <Image
@@ -24,8 +20,8 @@
                 WidthRequest="50"
                 HeightRequest="50"
                 HorizontalOptions="Start"
-            VerticalOptions="Start"
-            Margin="45"
+                VerticalOptions="Start"
+                Margin="45"
             />
 
         <StackLayout

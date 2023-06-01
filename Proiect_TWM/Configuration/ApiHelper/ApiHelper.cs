@@ -13,7 +13,7 @@ namespace Proiect_TWM.Configuration.ApiHelper
            ApiClient.BaseAddress = new Uri("https://house-plants2.p.rapidapi.com/");
            ApiClient.DefaultRequestHeaders.Accept.Clear();
            ApiClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json")); //we only accept data with type json
-           ApiClient.DefaultRequestHeaders.Add("X-RapidAPI-Key", "321aae1f58msh62fda46908b9d4fp1d2002jsn06f16e6f5e72");
+           ApiClient.DefaultRequestHeaders.Add("X-RapidAPI-Key", "da30eae187mshf5055d7ea2d28dap1ca514jsn30ce36d43c05");
            ApiClient.DefaultRequestHeaders.Add("X-RapidAPI-Host", "house-plants2.p.rapidapi.com");
         }
     }
