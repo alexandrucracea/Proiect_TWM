@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Proiect_TWM.View.AddPlantrsCustomView"
+             Title="AddPlantrsCustomView"
+             Loaded="pickerFamily_Loaded">
+    <VerticalStackLayout>
+        <Label 
+            Text="Add Plant"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Text="Name"/>
+        <Entry 
+            x:Name="entryName"
+            Placeholder="Enter your plant's name"
+            Text="{Binding Name}">
+            <Entry.Behaviors>
+                <toolkit:TextValidationBehavior 
+                InvalidStyle="{StaticResource InvalidEntryStyle}"
+                ValidStyle="{StaticResource ValidEntryStyle}"
+                Flags="ValidateOnValueChanged"
+                MinimumLength="1"
+                MaximumLength="10" />
+            </Entry.Behaviors>
+        </Entry>
+        <Label 
+            Text="Family"/>
+        <Picker
+            x:Name="pickerFamily"
+            ItemDisplayBinding="{Binding Name}"
+            SelectedItem="{Binding SelectedFamily}"
+            />
+        <Label 
+            Text="Description"/>
+        <Entry  
+            x:Name="entryDescription"
+            Placeholder="Enter your plant's description"
+            Text="{Binding Description}"/>
+        <Button 
+            Text="Save plant"
+            Command="{Binding SavePersonalPlant}"
+            Clicked="GoBackAsync"/>
+    </VerticalStackLayout>
+</ContentPage>

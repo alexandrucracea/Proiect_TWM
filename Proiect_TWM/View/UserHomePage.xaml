@@ -24,6 +24,10 @@
             <Button 
                     Text="Inapoi"
                     Clicked="Button_Clicked"/>
+            <Button
+                Text="Adauga plante"
+                Clicked="AddPlants"
+                />
 
         </VerticalStackLayout>
     </ScrollView>

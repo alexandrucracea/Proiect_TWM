@@ -23,7 +23,8 @@ public partial class HomePageView : ContentPage
     }
     public async Task LoadPlants()
     {
-        await _dataService.SaveAllPlantsAsync(_databaseRepository);
+        //await _dataService.SaveAllPlantsAsync(_databaseRepository);
+        //TODO de decomentat
 
 
     }

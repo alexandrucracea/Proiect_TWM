@@ -2,9 +2,9 @@
 
 namespace Proiect_TWM.Model.ApiResponse
 {
-    public class ApiPlantInfoResponseModel
+    public class ApiPlantInfoResponseModel : IApiPlantInfoResponseModel
     {
-        [JsonProperty(PropertyName ="Latin name")]
+        [JsonProperty(PropertyName = "Latin name")]
         public string LatinName { get; set; }
         public string Id { get; set; }
         public string Img { get; set; }
