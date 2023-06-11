@@ -1,4 +1,5 @@
-﻿using Proiect_TWM.Model.ApiResponse;
+﻿using Proiect_TWM.Model;
+using Proiect_TWM.Model.ApiResponse;
 
 
 namespace Proiect_TWM.Data
@@ -6,6 +7,8 @@ namespace Proiect_TWM.Data
     public interface IDatabaseRepository
     {
         Task SavePlantsAsync(IEnumerable<ApiPlantInfoResponseModel> plants);
-    
+        Task SaveCustomPlantAsync(PersonalPlantsModel plant);
+        Task<List<PlantFamilyModel>> GetFamilies();
+
     }
 }

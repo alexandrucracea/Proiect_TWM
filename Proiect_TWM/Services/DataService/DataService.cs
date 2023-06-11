@@ -1,7 +1,9 @@
 ﻿
 using Proiect_TWM.Data;
+using Proiect_TWM.Model;
 using Proiect_TWM.Model.ApiResponse;
 using Proiect_TWM.Services.RecipeService;
+using Proiect_TWM.ViewModel;
 
 namespace Proiect_TWM.Services.DataService
 {
@@ -18,6 +20,14 @@ namespace Proiect_TWM.Services.DataService
             {
                 await _databaseRepository.SavePlantsAsync(plants.Plants);
             }
+        }
+        public async Task InsertCustomPlant(IDatabaseRepository databaseRepository, PersonalPlantsModel plant)
+        {
+            await databaseRepository.SaveCustomPlantAsync(plant);
+        }
+        public async Task<List<PlantFamilyModel>> GetAllFamilies(IDatabaseRepository databaseRepository)
+        {
+            return await databaseRepository.GetFamilies();
         }
     }
 }
