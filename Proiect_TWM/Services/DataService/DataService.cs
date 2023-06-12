@@ -3,7 +3,6 @@ using Proiect_TWM.Data;
 using Proiect_TWM.Model;
 using Proiect_TWM.Model.ApiResponse;
 using Proiect_TWM.Services.RecipeService;
-using Proiect_TWM.ViewModel;
 
 namespace Proiect_TWM.Services.DataService
 {
@@ -25,9 +24,17 @@ namespace Proiect_TWM.Services.DataService
         {
             await databaseRepository.SaveCustomPlantAsync(plant);
         }
+        public async Task<IEnumerable<PersonalPlantsModel>> GetUserPlants(IDatabaseRepository databaseRepository)
+        {
+           return await databaseRepository.GetPersonalPlants();
+        }
         public async Task<List<PlantFamilyModel>> GetAllFamilies(IDatabaseRepository databaseRepository)
         {
             return await databaseRepository.GetFamilies();
+        }
+        public async Task DeletePersonalPlant(IDatabaseRepository repository, PersonalPlantsModel plant)
+        {
+            await repository.DeletePersonalPlant(plant);
         }
     }
 }

@@ -2,6 +2,7 @@
 using Proiect_TWM.Model;
 using Proiect_TWM.Services;
 using Proiect_TWM.Services.DataService;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace Proiect_TWM.ViewModel
@@ -38,9 +39,9 @@ namespace Proiect_TWM.ViewModel
                    Family = SelectedFamily.Name.ToString(),
                    Description=Description,
                    Climat="indoors"
-                        }); 
-                   }
-               ); 
+                        });
+               }
+               );
         }
  
     }

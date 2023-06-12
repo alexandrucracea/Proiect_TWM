@@ -52,7 +52,7 @@ namespace Proiect_TWM.ViewModel
                     searchText = value; 
                     OnPropertyChanged();
                     if(searchText != null) { 
-                    Plants = plants.Where(x => x.LatinName.ToLower().StartsWith(SearchText.ToLower()));
+                    Plants = plants.Where(x => x.LatinName.ToLower().StartsWith(SearchText.ToLower())).Take(15);
                     }
                 }
         }

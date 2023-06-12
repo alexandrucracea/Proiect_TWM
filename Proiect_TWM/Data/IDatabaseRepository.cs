@@ -9,6 +9,8 @@ namespace Proiect_TWM.Data
         Task SavePlantsAsync(IEnumerable<ApiPlantInfoResponseModel> plants);
         Task SaveCustomPlantAsync(PersonalPlantsModel plant);
         Task<List<PlantFamilyModel>> GetFamilies();
+        Task<IEnumerable<PersonalPlantsModel>> GetPersonalPlants();
+        Task DeletePersonalPlant(PersonalPlantsModel plant);
 
     }
 }

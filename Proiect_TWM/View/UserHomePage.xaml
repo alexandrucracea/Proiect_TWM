@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiect_TWM.View.UserHomePage"
-             Title="UserHomePage">
+             Title="UserHomePage"
+             Appearing="ContentPage_Appearing">
     <ScrollView>
         <VerticalStackLayout>
             <Label 
@@ -21,6 +22,32 @@
             Aspect="AspectFill"
             HorizontalOptions="Start"
             Margin="20"/>
+            <CollectionView
+                x:Name="collectionView"
+                ItemsSource="{Binding UserPlants}"
+                SelectionMode="Single"
+                SelectedItem="{Binding PersonalPlant}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   FontAttributes="Bold" />
+                            <Button Text="Delete Plant"
+                                    Command="{Binding BindingContext.DeleteCommand, Source={x:Reference collectionView}}"
+                                    CommandParameter="{Binding .}"></Button>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             <Button 
                     Text="Inapoi"
                     Clicked="Button_Clicked"/>
