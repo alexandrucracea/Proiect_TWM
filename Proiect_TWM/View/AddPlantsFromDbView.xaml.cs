@@ -13,9 +13,4 @@ public partial class AddPlantsFromDbView : ContentPage
 		viewModel = new AddPlantsFromDbViewModel();
         BindingContext = viewModel;
     }
-
-    private void CollectionView_Scrolled(object sender, ItemsViewScrolledEventArgs e)
-    {
-
-    }
 }

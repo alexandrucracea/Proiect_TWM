@@ -50,7 +50,7 @@ public partial class AddPlantrsCustomView : ContentPage, INotifyPropertyChanged
 
     private async void GoBackAsync(object sender, EventArgs e)
     {
-		await Navigation.PopAsync();
+        await Navigation.PopAsync();
     }
     public List<PlantFamilyModel> Families
     {

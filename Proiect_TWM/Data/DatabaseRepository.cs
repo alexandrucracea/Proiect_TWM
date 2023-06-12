@@ -15,23 +15,30 @@ namespace Proiect_TWM.Data
 
         private async Task Initialize()
         {
-            if(connection is null)
-            {
-                var path = Path.Combine(FileSystem.AppDataDirectory, dbName);
-                var flags = SQLite.SQLiteOpenFlags.ReadWrite
-                    | SQLite.SQLiteOpenFlags.Create
-                    | SQLite.SQLiteOpenFlags.SharedCache;
-                connection = new SQLiteAsyncConnection(path, flags);
-                await connection.CreateTableAsync<ApiPlantInfoResponseModel>();
-                await connection.CreateTableAsync<PersonalPlantsModel>();
-                await connection.CreateTableAsync<PlantFamilyModel>();
-                var families = await connection.Table<PlantFamilyModel>().ToListAsync();
-                if(families is null)
+            
+                if (connection is null)
                 {
-                    await PopulateFamilyTable();
+                    var path = Path.Combine(FileSystem.AppDataDirectory, dbName);
+                    var flags = SQLite.SQLiteOpenFlags.ReadWrite
+                        | SQLite.SQLiteOpenFlags.Create
+                        | SQLite.SQLiteOpenFlags.SharedCache;
+                    connection = new SQLiteAsyncConnection(path, flags);
+                try { 
+                    await connection.CreateTableAsync<ApiPlantInfoResponseModel>();
+                    await connection.CreateTableAsync<PersonalPlantsModel>();
+                    await connection.CreateTableAsync<PlantFamilyModel>();
+                    var families = await connection.Table<PlantFamilyModel>().ToListAsync();
+                    if (families is null || families.Count == 0)
+                    {
+                        await PopulateFamilyTable();
+                    }
+                }catch (Exception ex)
+                {
+                    await Console.Out.WriteLineAsync(ex.Message);
                 }
 
-            }
+        }
+                
         }
         private async Task PopulateFamilyTable()
         {
@@ -75,7 +82,7 @@ namespace Proiect_TWM.Data
         public async Task SavePlantsAsync(IEnumerable<ApiPlantInfoResponseModel> plants)
         {
             await Initialize();
-            await connection.DeleteAllAsync<ApiPlantInfoResponseModel>();
+            //await connection.DeleteAllAsync<ApiPlantInfoResponseModel>();
             await connection.InsertAllAsync(plants);
 
         }
@@ -84,10 +91,20 @@ namespace Proiect_TWM.Data
             await Initialize(); //todo de initializat doar tabela de plante personale
             await connection.InsertAsync(plant);
         }
+        public async Task<IEnumerable<PersonalPlantsModel>>GetPersonalPlants()
+        {
+            await Initialize();
+            return await connection.Table<PersonalPlantsModel>().ToListAsync();
+        }
+        public async Task DeletePersonalPlant(PersonalPlantsModel plant)
+        {
+            await connection.DeleteAsync(plant); //todo de adaugat primary key
+        }
         public async Task<List<PlantFamilyModel>> GetFamilies()
         {
             await Initialize();
             return await connection.Table<PlantFamilyModel>().ToListAsync();
+
         }
     }
 }

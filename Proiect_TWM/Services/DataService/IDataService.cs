@@ -10,6 +10,8 @@ namespace Proiect_TWM.Services.DataService
         Task<ApiPlantListResponseModel> GetAllPlantsAsync();
         Task SaveAllPlantsAsync(IDatabaseRepository _databaseRepository);
         Task InsertCustomPlant(IDatabaseRepository databaseRepository, PersonalPlantsModel plant);
+        Task<IEnumerable<PersonalPlantsModel>> GetUserPlants(IDatabaseRepository databaseRepository);
         Task<List<PlantFamilyModel>> GetAllFamilies(IDatabaseRepository databaseRepository);
+        Task DeletePersonalPlant(IDatabaseRepository repository, PersonalPlantsModel plant);
     }
 }

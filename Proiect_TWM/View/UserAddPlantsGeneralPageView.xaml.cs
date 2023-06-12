@@ -14,9 +14,16 @@ public partial class UserAddPlantsGeneralPageView : ContentPage
     }
     private async void AddPlantsFromDb(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new AddPlantsFromDbView());
+        addPlantsDb.IsVisible = false;
+        addPlantCuston.IsVisible = false;
+        await progressBar.ProgressTo(1.0, 4000, Easing.Linear);
+        AddPlantsFromDbView addPlantsFromDbView = new AddPlantsFromDbView();
+        await Navigation.PushAsync(addPlantsFromDbView);
         Navigation.RemovePage(this);
     }
 
-
+    private void ContentPage_Disappearing(object sender, EventArgs e)
+    {
+       
+    }
 }

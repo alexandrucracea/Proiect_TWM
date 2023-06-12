@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiect_TWM.View.AddPlantsFromDbView"
-             Title="AddPlantsFromDbView">
+             Title="AddPlantsFromDbView"
+             >
     <ScrollView>
         <VerticalStackLayout>
             <Label Text="Cautare plante"></Label>
@@ -28,6 +29,7 @@
                             <Label Grid.Column="1"
                                    Text="{Binding LatinName}"
                                    FontAttributes="Bold" />
+
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
