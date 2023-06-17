@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Proiect_TWM.View.HomePageView"
-             Shell.NavBarIsVisible="False"
-             Loaded="ContentPage_Loaded">
-
+             Loaded="ContentPage_Loaded"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource BACKGROUND}"
+             >
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource BACKGROUND}" StatusBarStyle="DarkContent" />
+    </ContentPage.Behaviors>
     <Grid>
-        
-        <Image
-            x:Name="backgroundImage"
-            Source="home_background.png"
-            Aspect="AspectFill"
-            HorizontalOptions="Start"
-            Margin="20">
-        </Image>
-        <Image 
-                x:Name="Logo"
-                Source="home_logo.png"
-                WidthRequest="50"
-                HeightRequest="50"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                Margin="45"
-            />
-
-        <StackLayout
+        <StackLayout 
             VerticalOptions="Center"
-            HorizontalOptions="Center">
-            
-                <Label 
+            HorizontalOptions="Center" >
+            <Image 
+                x:Name="Logo"
+                Source="leaf_logo.png"
+                WidthRequest="200"
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                Margin="0,0,0,50"
+            />
+            <Label 
                  Text="PLANTIFY"
-                 CharacterSpacing="10"
                  VerticalOptions="Center" 
                  HorizontalOptions="Center"
-                 FontSize="65"
-                 TextColor="#FFF"/>
+                 CharacterSpacing="1.5"
+                 FontSize="52"
+                 TextColor="{StaticResource DARK-ACCENT}"  
+                 FontFamily="Lora-SemiBold"/>
 
 
                 <Label 
                  Text="NURTURE YOUR GREEN OASIS EFFORTLESSLY"
-                 CharacterSpacing="3"
-                 FontSize="20"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center" 
-                 TextColor="#FFF"/>
+                 CharacterSpacing="1.5"
+                 FontSize="18"
+                 Padding="1"
+                 WidthRequest="300"
+                 LineHeight="1"
+                 HorizontalTextAlignment="Center"
+                 TextColor="{StaticResource TEXT}"
+                 FontFamily="Nunito-Regular"/>
 
                 <Button
-                 Text="VISIT YOUR GARDEN"
-                 FontAttributes="Bold"
-                 TextColor="#495057"
-                 CornerRadius="30"
-                 WidthRequest="200"
-                 HeightRequest="50"
+                 Text="Visit your garden"
+                 WidthRequest="250"
+                 HeightRequest="70"
                  Clicked="Button_Clicked"
-                 Margin="100"/>
+                 FontFamily="Nunito-SemiBold"
+                 TextColor="{StaticResource BACKGROUND}"
+                 BackgroundColor="{StaticResource MAIN}"
+                 FontSize="20"
+                 CornerRadius="16"
+                 Margin="0, 180, 0, 0"/>
 
         </StackLayout>
         

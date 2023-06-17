@@ -1,10 +1,6 @@
 ﻿using Proiect_TWM.Model;
 using Proiect_TWM.Model.ApiResponse;
 using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Proiect_TWM.Data
 {

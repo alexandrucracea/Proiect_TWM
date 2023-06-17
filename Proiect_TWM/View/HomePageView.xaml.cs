@@ -1,7 +1,6 @@
 using Proiect_TWM.Configuration.ApiHelper;
 using Proiect_TWM.Data;
 using Proiect_TWM.Services.DataService;
-using Proiect_TWM.Services.RecipeService;
 
 namespace Proiect_TWM.View;
 
@@ -15,7 +14,7 @@ public partial class HomePageView : ContentPage
         _databaseRepository = new DatabaseRepository();
         _dataService = new DataService();
 		InitializeComponent();
-	}
+    }
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
@@ -35,4 +34,5 @@ public partial class HomePageView : ContentPage
         ApiHelper.InitializeClient();
         await LoadPlants();
     }
+
 }
