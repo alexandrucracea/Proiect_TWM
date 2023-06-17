@@ -16,7 +16,7 @@
             HorizontalOptions="Center" >
             <Image 
                 x:Name="Logo"
-                Source="leaf_logo.png"
+                Source="leaf_logo_main.png"
                 WidthRequest="200"
                 HeightRequest="200"
                 HorizontalOptions="Center"

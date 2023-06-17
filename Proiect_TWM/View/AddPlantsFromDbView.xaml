@@ -2,44 +2,67 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiect_TWM.View.AddPlantsFromDbView"
-             Title="AddPlantsFromDbView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource BACKGROUND}"
              >
-    <ScrollView>
-        <VerticalStackLayout>
-            <Label Text="Cautare plante"></Label>
-            <Entry x:Name="entrySearch"
-                   Text="{Binding SearchText}">
-            </Entry>
-            <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-            <CollectionView 
+    <AbsoluteLayout>
+        <Image Source="leaves_in_vase.png"
+                       HeightRequest="400"
+                       WidthRequest="300"
+                       Margin="50,250,0,0"
+                       Opacity="0.3"
+               ></Image>
+        <Label Text="Search for a plant"
+                   TextColor="{StaticResource DARK-ACCENT}"
+                   FontFamily="Lora-Regular"
+                   FontSize="36"
+                   Margin="15,30,0,0"
+               HorizontalTextAlignment="Center"></Label>
+        <ScrollView HeightRequest="700">
+            <VerticalStackLayout>
+                <Entry x:Name="entrySearch"
+                   Text="{Binding SearchText}"
+                   TextColor="{StaticResource TEXT}"
+                   FontFamily="Nunito-Regular"
+                   FontSize="24"
+                   Placeholder="Type here.."
+                   PlaceholderColor="{StaticResource LIGHT-ACCENT}"
+                   Margin="15,100,15,0"
+                   WidthRequest="350">
+                </Entry>
+                <CollectionView 
                 x:Name="collectionView"
                 ItemsSource="{Binding Plants}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Padding="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Button 
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Button 
                                    x:Name="button"
                                    Grid.Column="1"
                                    Text="{Binding LatinName}"
                                    FontAttributes="Bold"
-                                   Clicked="buttonName_Clicked">
-                            </Button>
+                                   TextColor="{StaticResource TEXT}"
+                                   FontFamily="Nunito-Regular"
+                                   Clicked="buttonName_Clicked"
+                                   Padding="0,15,0,10"
+                                   WidthRequest="380"
+                                   HorizontalOptions="Start"
+                                   BackgroundColor="{StaticResource BACKGROUND}">
+                                </Button>
 
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </VerticalStackLayout>
-    </ScrollView>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </AbsoluteLayout>
 </ContentPage>
