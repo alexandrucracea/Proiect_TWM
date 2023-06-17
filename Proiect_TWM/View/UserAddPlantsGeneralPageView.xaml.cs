@@ -23,7 +23,7 @@ public partial class UserAddPlantsGeneralPageView : ContentPage
         addPlantsDb.IsVisible = false;
         addPlantCuston.IsVisible = false;
         await progressBar.ProgressTo(1.0, 3000, Easing.Linear);
-        
+        Task.WaitAll(t);
         Navigation.RemovePage(this);
     }
 

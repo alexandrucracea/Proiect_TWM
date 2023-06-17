@@ -82,7 +82,7 @@ namespace Proiect_TWM.Data
         public async Task SavePlantsAsync(IEnumerable<ApiPlantInfoResponseModel> plants)
         {
             await Initialize();
-            //await connection.DeleteAllAsync<ApiPlantInfoResponseModel>();
+            await connection.DeleteAllAsync<ApiPlantInfoResponseModel>(); //todo de sters
             await connection.InsertAllAsync(plants);
 
         }
