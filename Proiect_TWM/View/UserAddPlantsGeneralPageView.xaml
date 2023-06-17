@@ -2,20 +2,43 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiect_TWM.View.UserAddPlantsGeneralPageView"
-             Title="UserAddPlantsGeneralPageView"
-             Disappearing="ContentPage_Disappearing">
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Disappearing="ContentPage_Disappearing"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource BACKGROUND}">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource BACKGROUND}" StatusBarStyle="DarkContent" />
+    </ContentPage.Behaviors>
     <VerticalStackLayout>
+        <ProgressBar x:Name="progressBar"
+                     ProgressColor="{StaticResource MAIN}"
+                     Margin="20, 400, 20, 0"/>
         <Button
             x:Name="addPlantCuston"
-            Text="Adauga planta proprie"
+            Text="Personal plant"
             Clicked="AddPlantsCustom"
+            WidthRequest="250"
+            HeightRequest="70"
+            FontFamily="Nunito-SemiBold"
+            TextColor="{StaticResource BACKGROUND}"
+            BackgroundColor="{StaticResource MAIN}"
+            FontSize="20"
+            CornerRadius="16"
+            Margin="0, 20, 0, 0"
             />
         <Button
             x:Name="addPlantsDb"
-            Text="Adauga planta din baza de date"
+            Text="Search plant"
             Clicked="AddPlantsFromDb"
+            WidthRequest="250"
+            HeightRequest="70"
+            FontFamily="Nunito-SemiBold"
+            TextColor="{StaticResource BACKGROUND}"
+            BackgroundColor="{StaticResource MAIN}"
+            FontSize="20"
+            CornerRadius="16"
+            Margin="0,20, 0, 0"
             />
-        <ProgressBar    x:Name="progressBar"
-                            ProgressColor="Orange" />
+
     </VerticalStackLayout>
 </ContentPage>

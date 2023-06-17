@@ -1,63 +1,134 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Proiect_TWM.View.UserHomePage"
-             Title="UserHomePage"
-             Appearing="ContentPage_Appearing">
-    <ScrollView>
-        <VerticalStackLayout>
-            <Label 
+             Appearing="ContentPage_Appearing"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource BACKGROUND}">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource BACKGROUND}" StatusBarStyle="DarkContent" />
+    </ContentPage.Behaviors>
+
+    <VerticalStackLayout>
+        <Label 
             Text="Plant, track, and thrive with our personalized gardening companion"
-            VerticalOptions="CenterAndExpand" 
-            HorizontalOptions="FillAndExpand"
-            VerticalTextAlignment="Center"
-            HorizontalTextAlignment="Center"
-            HeightRequest="75"
-            FontSize="24"
-            CharacterSpacing="2"
-            BackgroundColor="#0a3a1d"/>
-            <Image
-            x:Name="backgroundImage"
-            Source="home_background.png"
-            Aspect="AspectFill"
-            HorizontalOptions="Start"
-            Margin="20"/>
+            VerticalOptions="StartAndExpand" 
+            HorizontalOptions="StartAndExpand"
+            Padding="20"
+            HeightRequest="130"
+            FontSize="20"
+            CharacterSpacing="1"
+            BackgroundColor="{StaticResource BACKGROUND}"
+            TextColor="{StaticResource MAIN}"
+            FontFamily="Lora-Regular"
+            />
+        <Grid Padding="15,0,15,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button
+                 Grid.Column="0"
+                 Text="↩ Back"
+                 Clicked="Button_Clicked"
+                 FontFamily="Nunito-SemiBold"
+                 TextColor="{StaticResource BACKGROUND}"
+                 BackgroundColor="{StaticResource LIGHT-ACCENT}"
+                 FontSize="16"
+                 CornerRadius="16"
+                 />
+            <Button
+                Grid.Column="2"
+                Text="⁺  New Plant"
+                Clicked="AddPlants"
+                FontFamily="Nunito-SemiBold"
+                TextColor="{StaticResource BACKGROUND}"
+                BackgroundColor="{StaticResource MAIN}"
+                FontSize="16"
+                CornerRadius="16"
+                />
+        </Grid>
+
+        <ScrollView VerticalOptions="FillAndExpand" HeightRequest="630">
+                
             <CollectionView
                 x:Name="collectionView"
                 ItemsSource="{Binding UserPlants}"
                 SelectionMode="Single"
-                SelectedItem="{Binding PersonalPlant}">
+                SelectedItem="{Binding PersonalPlant}"
+                Grid.Row="1"
+                >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Padding="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="1"
-                                   Text="{Binding Name}"
-                                   FontAttributes="Bold" />
-                            <Button Text="Delete Plant"
-                                    Command="{Binding BindingContext.DeleteCommand, Source={x:Reference collectionView}}"
-                                    CommandParameter="{Binding .}"></Button>
-                        </Grid>
+                        <VerticalStackLayout>
+                            <Border 
+                                StrokeShape="RoundRectangle 16,16,16,16"
+                                BackgroundColor="#f1eae4"
+                                HorizontalOptions="CenterAndExpand"
+                                Margin="0,10,0,0"
+                                WidthRequest="350">
+                                <VerticalStackLayout>
+                                    <Grid Padding="15">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition  Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0"
+                                           Text="{Binding Name}"
+                                           TextColor="{StaticResource TEXT}"
+                                           FontFamily="Lora-Regular"
+                                           FontSize="20"
+                                           Padding="10,0,0,0"
+                                           HeightRequest="35"
+                                           />
+                                        <Label Grid.Column="0"  
+                                               Grid.Row="1"
+                                               Text="{Binding Family}"
+                                               TextColor="#4a4d4a"
+                                               FontFamily="Nunito-Regular"
+                                               FontSize="16"
+                                               Padding="10,0,0,0"
+                                               />
+                                        <Label Grid.Column="0" Grid.Row="2"
+                                           Text="{Binding Description}"
+                                           TextColor="{StaticResource LIGHT-ACCENT}"
+                                           FontFamily="Nunito-Regular"
+                                           Padding="10,15,0,0"
+                                           FontSize="14"
+                                           WidthRequest="200"
+                                    />
+                                        <Button Grid.Column="3"
+                                                Grid.Row="0"
+                                                Text="✕  Delete"
+                                                FontFamily="Nunito-Bold"
+                                                BackgroundColor="{StaticResource DARK-ACCENT}"
+                                                CornerRadius="16"
+                                                HeightRequest="40"
+                                                Command="{Binding BindingContext.DeleteCommand, Source={x:Reference collectionView}}"
+                                                CommandParameter="{Binding .}"></Button>    
+                                    </Grid>
+
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button 
-                    Text="Inapoi"
-                    Clicked="Button_Clicked"/>
-            <Button
-                Text="Adauga plante"
-                Clicked="AddPlants"
-                />
+        </ScrollView>
 
-        </VerticalStackLayout>
-    </ScrollView>
+    </VerticalStackLayout>
 
 
 </ContentPage>

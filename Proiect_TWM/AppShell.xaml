@@ -5,10 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Proiect_TWM"
     xmlns:views="clr-namespace:Proiect_TWM.View"
-    Shell.FlyoutBehavior="Disabled">
-
+   >
     <ShellContent
-        Title="Home" 
         ContentTemplate="{DataTemplate views:HomePageView}"
         />
 
