@@ -14,7 +14,9 @@
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-            <CollectionView ItemsSource="{Binding Plants}">
+            <CollectionView 
+                x:Name="collectionView"
+                ItemsSource="{Binding Plants}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10">
@@ -26,9 +28,13 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="1"
+                            <Button 
+                                   x:Name="button"
+                                   Grid.Column="1"
                                    Text="{Binding LatinName}"
-                                   FontAttributes="Bold" />
+                                   FontAttributes="Bold"
+                                   Clicked="buttonName_Clicked">
+                            </Button>
 
                         </Grid>
                     </DataTemplate>

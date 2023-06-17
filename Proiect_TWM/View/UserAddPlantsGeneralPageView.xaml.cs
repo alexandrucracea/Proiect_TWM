@@ -14,11 +14,16 @@ public partial class UserAddPlantsGeneralPageView : ContentPage
     }
     private async void AddPlantsFromDb(object sender, EventArgs e)
     {
+        AddPlantsFromDbView addPlantsFromDbView;
+        Task t = new Task(() => {
+            addPlantsFromDbView = new AddPlantsFromDbView();
+            Navigation.PushAsync(addPlantsFromDbView);
+        });
+        t.Start();
         addPlantsDb.IsVisible = false;
         addPlantCuston.IsVisible = false;
-        await progressBar.ProgressTo(1.0, 4000, Easing.Linear);
-        AddPlantsFromDbView addPlantsFromDbView = new AddPlantsFromDbView();
-        await Navigation.PushAsync(addPlantsFromDbView);
+        await progressBar.ProgressTo(1.0, 3000, Easing.Linear);
+        
         Navigation.RemovePage(this);
     }
 
