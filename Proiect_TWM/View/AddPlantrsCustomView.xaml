@@ -9,6 +9,13 @@
     <ContentPage.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{StaticResource BACKGROUND}" StatusBarStyle="DarkContent" />
     </ContentPage.Behaviors>
+    <VerticalStackLayout>
+        <Label Text="Search for a plant"
+                   TextColor="{StaticResource MAIN}"
+                   FontFamily="Lora-Regular"
+                   FontSize="36"
+                   Margin="0,30,0,20"
+               HorizontalTextAlignment="Center"></Label>
     <Border 
            StrokeShape="RoundRectangle 16,16,16,16"
            BackgroundColor="#f1eae4"
@@ -85,4 +92,5 @@
                 Margin="0,100,0,0"/>
         </VerticalStackLayout>
     </Border>
+    </VerticalStackLayout>
 </ContentPage>

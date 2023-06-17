@@ -10,9 +10,14 @@
         <toolkit:StatusBarBehavior StatusBarColor="{StaticResource BACKGROUND}" StatusBarStyle="DarkContent" />
     </ContentPage.Behaviors>
     <VerticalStackLayout>
+        <Image 
+               Source="plant_in_pot.png"
+               WidthRequest="350"
+               HeightRequest="350"
+               Margin="0,70,0,0"></Image>
         <ProgressBar x:Name="progressBar"
                      ProgressColor="{StaticResource MAIN}"
-                     Margin="20, 400, 20, 0"/>
+                     Margin="20, 50, 20, 0"/>
         <Button
             x:Name="addPlantCuston"
             Text="Personal plant"
@@ -39,6 +44,5 @@
             CornerRadius="16"
             Margin="0,20, 0, 0"
             />
-
     </VerticalStackLayout>
 </ContentPage>

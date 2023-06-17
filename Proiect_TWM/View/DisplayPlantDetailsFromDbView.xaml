@@ -2,13 +2,76 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiect_TWM.View.DisplayPlantDetailsFromDbView"
-             Title="DisplayPlantDetailsFromDbView">
-    <VerticalStackLayout>
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource BACKGROUND}">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource BACKGROUND}" StatusBarStyle="DarkContent" />
+    </ContentPage.Behaviors>
+    <VerticalStackLayout
+        HorizontalOptions="Center"
+        Margin="15,40,15,0">
         <Label
             x:Name="labelName"
-            Text="{Binding Name}" />
+            Text="{Binding Name}"
+            TextColor="{StaticResource MAIN}"
+            FontFamily="Lora-Bold"
+            FontSize="44"
+            />
+        <Label
+            x:Name="labelFamilyText"
+            Text="Family"
+            TextColor="{StaticResource LIGHT-ACCENT}"
+            FontFamily="Nunito-Bold"
+            TextTransform="Uppercase"
+            FontSize="20"
+            Margin="0,60,0,0"
+            />
+        <Label
+            x:Name="labelFamily"         
+            Text="{Binding Family}"
+            TextColor="{StaticResource TEXT}"
+            FontFamily="Nunito-Regular"
+            FontSize="24"
+            />
+        <Label
+            x:Name="labelDescriptionText"
+            Text="Description"
+            TextTransform="Uppercase"
+            TextColor="{StaticResource LIGHT-ACCENT}"
+            FontFamily="Nunito-Bold"
+            FontSize="20"
+            Margin="0,20,0,0"/>
+        <Label
+            x:Name="labelDescription"
+            Text="{Binding Description}"
+            TextColor="{StaticResource TEXT}"
+            FontFamily="Nunito-Regular"
+            FontSize="24"/>
+        <Label
+            x:Name="labelClimatText"
+            Text="Climat"
+            TextTransform="Uppercase"
+            TextColor="{StaticResource LIGHT-ACCENT}"
+            FontFamily="Nunito-Bold"
+            FontSize="20"
+            Margin="0,20,0,0"/>
+        <Label
+            x:Name="labelClimat"
+            Text="{Binding Climat}"
+            TextColor="{StaticResource TEXT}"
+            FontFamily="Nunito-Regular"
+            FontSize="24"/>
+
         <Button 
             Text="Save plant"
-            Clicked="Button_Clicked"/>
+            Clicked="Button_Clicked"
+            FontFamily="Nunito-SemiBold"
+            TextColor="{StaticResource BACKGROUND}"
+            BackgroundColor="{StaticResource MAIN}"
+            FontSize="24"
+            CornerRadius="16"
+            WidthRequest="200"
+            Margin="0,200,0,0"/>
     </VerticalStackLayout>
 </ContentPage>
