@@ -72,6 +72,6 @@
             FontSize="24"
             CornerRadius="16"
             WidthRequest="200"
-            Margin="0,200,0,0"/>
+            Margin="0,60,0,0"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -31,4 +31,9 @@ public partial class UserHomePage : ContentPage
     {
         await viewModel.UpdateAddedPlants();
     }
+
+    private void collectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        collectionView.BackgroundColor = new Color(251, 250, 239);
+    }
 }

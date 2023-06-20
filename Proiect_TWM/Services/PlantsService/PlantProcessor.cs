@@ -24,7 +24,10 @@ namespace Proiect_TWM.Services.RecipeService
                             plant.Id = plant?.Id ?? "111111111111"; 
                             plant.Img = plant?.Img ?? string.Empty;
                             plant.Family = plant?.Family ?? string.Empty;
-                            plant.Description = plant?.Description ?? "This is a cute plant";
+                            plant.Description = plant?.Description
+                                                ?? 
+                                                "It is a climbing, evergreen perennial vine that is perhaps most noted for its large perforated leaves on thick plant stems " +
+                                                "and its long cord-like aerial roots.";
                             plant.Climat = plant?.Climat ?? string.Empty;
                         }
                         return new ApiPlantListResponseModel { Plants = plantList };
