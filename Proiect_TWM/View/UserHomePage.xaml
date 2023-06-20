@@ -62,6 +62,7 @@
                 SelectionMode="Single"
                 SelectedItem="{Binding PersonalPlant}"
                 Grid.Row="1"
+                SelectionChanged="collectionView_SelectionChanged"
                 >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -96,9 +97,9 @@
                                         <Label Grid.Column="0"  
                                                Grid.Row="1"
                                                Text="{Binding Family}"
-                                               TextColor="#4a4d4a"
+                                               TextColor="{StaticResource DARK-ACCENT}"
                                                FontFamily="Nunito-Regular"
-                                               FontSize="16"
+                                               FontSize="14"
                                                Padding="10,0,0,0"
                                                />
                                         <Label Grid.Column="0" Grid.Row="2"
@@ -107,13 +108,13 @@
                                            FontFamily="Nunito-Regular"
                                            Padding="10,15,0,0"
                                            FontSize="14"
-                                           WidthRequest="200"
+                                           WidthRequest="275"
                                     />
                                         <Button Grid.Column="3"
                                                 Grid.Row="0"
                                                 Text="✕  Delete"
                                                 FontFamily="Nunito-Bold"
-                                                BackgroundColor="{StaticResource DARK-ACCENT}"
+                                                BackgroundColor="#FF675f"
                                                 CornerRadius="16"
                                                 HeightRequest="40"
                                                 Command="{Binding BindingContext.DeleteCommand, Source={x:Reference collectionView}}"
